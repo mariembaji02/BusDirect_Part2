@@ -7,7 +7,9 @@ export function estVIP(siege) {}
 export function prixSiege(prix, siege)  {}
 
 // export const test = () => console.log("store OK");:
-export function recetteTrajet(trip) {}      
+export function recetteTrajet(trip) {
+    
+}      
 export function reserver(trip, p, siege){}
 export function modifier(trip, siege, p){}
 export function annuler(trip, siege) {}     

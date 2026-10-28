@@ -1,0 +1,114 @@
+/* Desktoop */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*
+{
+      font-family: 'Poppins', sans-serif;
+}
+
+.countainer-Box>div
+{
+      
+      border-radius: 10px;
+      padding: 10px;
+      height: 9rem;
+      align-items: end;
+      color: rgb(58, 64, 70);
+      
+}
+.countainer-Box>div.disponible
+{
+   background-color: rgb(171, 228, 228);
+}
+.countainer-Box>div.reserver
+{
+  background-color: rgba(221, 56, 56, 0.918);
+}
+.box p
+{
+   border: 1px solid rgb(121, 119, 119);
+   text-align: center;
+   border-radius: 5px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size:medium;
+   padding: 4px;
+   font-weight: bold;
+}
+.box p.nom
+{
+  height: 60%;
+  background-color: rgba(225, 241, 239, 0.747);
+  margin-bottom: 3px;
+}
+.box p.siege
+{
+  
+  background-color: rgba(225, 241, 239, 0.747);
+  display: flex;
+  justify-content: space-evenly;
+  
+  color: rgb(172, 146, 20);
+  font-size: 20px;
+}
+.logo
+{
+      width: 50px;
+}
+.valid{ color: green; border-color: green;background-color: rgba(65, 196, 65, 0.078);}
+.error{ color: red; border-color: red;background-color: rgba(222, 47, 47, 0.185);}
+
+ /* border-1 w-[90%] text-center p-1 rounded-xl  */
+.active
+        {
+             animation: opacity 1s forwards 3s;
+            
+             
+        }
+        @keyframes opacity {
+            from
+            {
+                   opacity: 1;
+                   visibility: visible;
+                  
+
+            }
+            to
+            {
+                opacity: 0;
+                visibility: hidden;
+                margin: 0;
+                padding: 0;
+                border: none;
+                max-height: 0;
+            }
+        }
+      
+.table_tickets
+{
+ 
+  height: 80%;
+  margin: auto;
+  width: 100%;
+  border-collapse: collapse;
+  
+}
+
+.table_tickets td
+{
+  /* border: 1px solid; */
+  border-collapse: 3px;
+  padding: 4px;
+}
+.table_tickets .name
+{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  /* font-weight: 600; */
+}
+.table_tickets .value
+{
+  /* background-color: red; */
+  text-align: center;
+  font-size: 16x;
+  font-family: 'Courier New', Courier, monospace;
+  
+}

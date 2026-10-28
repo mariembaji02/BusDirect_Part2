@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BusDirect-tickets</title>
+    <!-- link of style sheet  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- link of tailwind css -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <!-- font awsome link -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+       <link rel="shortcut icon" href="images/icon2.svg" type="image/x-icon">
+       
+</head>
+<body  class="min-h-screen flex flex-col">
+
+      <header class=" flex flex-col justify-between shadow-teal-100 shadow-xl  lg:flex-row">
+    <div class="   m-3 flex  justify-center text-3xl  lg:w-1/3 lg:justify-start lg:m-5 "><img src="images/icon2.svg" class="logo ml-4"><h1 class="mt-2">Bus<span class="text-[rgb(89,198,185)]">Direct</span></h1></div>
+    <!-- Navigation -->
+     <nav class="text-lg w-full flex justify-evenly  lg:w-1/2 ">
+        
+        <ul class="menu flex h-full mb-2  space-x-10 items-center  lg:w-[70%] justify-end gap-3" >
+            <li class="text-base "><a href="index.html">Trajets</a></li>
+            <li class="text-base "><a href="cabine.html">Cabine</a></li>
+            <li class="text-base pb-2 border-b-4 border-yellow-500/80 rounded-md"><a href="tickets.html">Tickets</a><span class="cout-ticket ml-2  bg-teal-300/40 rounded-3xl p-2 text-sm ">0</span></li>
+            <li><i class="fa-solid fa-circle-user text-3xl" style="color: rgb(89, 198, 185);"></i></li>
+        </ul>
+     </nav>
+  </header>
+  <!-- Informations du trajet -->
+  <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/20 ">
+    <div class="trajet lg:m-2">
+        <h3 class="text-lg mb-2">trajet</h3>
+        <h1 class="text-lg font-bold lg:text-3xl" style="color: rgba(171, 148, 33, 0.735);">Safi → Marrakech</h1>
+    </div>
+    
+    <div class="details-trajet  w-[80%] flex justify-center relative">
+      <input type="search" placeholder="Recherche ici ...." class="search bg-white h-8 w-[70%] p-5 border border-[rgba(186,162,45,0.91)] rounded mt-4">
+      <i class="fa-solid fa-magnifying-glass"  style="color: rgba(154, 153, 149, 0.731);font-size: 25px;position: absolute;right:20%;top: 25%;"></i>
+    </div>
+  </section>
+  <main class="w-full  flex justify-center mt-5 flex-1">
+       <section class="countainer_Tickets w-[95%]  h-auto grid grid-cols-1 place-items-center gap-3 lg:grid-cols-3  md:grid-cols-2">
+              
+               
+       </section>
+  </main>
+         <!-- Pied de page -->
+  <footer class="bg-black text-center h-20 pt-4 mt-4" >
+    <p class="text-white ">© 2026 BusDirect - Gestion des réservations</p>
+  </footer>
+
+    <!-- <script src="script.js"></script> -->
+    <script src="tickets_script.js"></script>
+</body>
+</html>

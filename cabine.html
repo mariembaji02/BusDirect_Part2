@@ -3,12 +3,315 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabine</title>
-    <!-- style sheet -->
+    <title>BusDirect</title>
+    <!-- link of style sheet  -->
     <link rel="stylesheet" href="style.css">
+    <!-- link of tailwind css -->
+      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+      <!-- font awsome link -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+       <link rel="shortcut icon" href="images/icon2.svg" type="image/x-icon">
+       
 </head>
-<body>
-    
-    <script type="module" src="js/main-cabine.js"></script>
+<body class="h-full "> 
+ 
+  <!-- En-tête du site -->
+  <header class=" flex flex-col justify-between shadow-teal-100 shadow-xl  lg:flex-row">
+    <div class="   m-3 flex  justify-center text-3xl  lg:w-1/3 lg:justify-start lg:m-5 "><img src="images/icon2.svg" class="logo ml-4"><h1 class="mt-2">Bus<span class="text-[rgb(89,198,185)]">Direct</span></h1></div>
+    <!-- Navigation -->
+     <nav class="text-lg w-full flex justify-evenly  lg:w-1/2 ">
+        
+        <ul class="menu flex h-full mb-2  space-x-10 items-center  lg:w-[70%] justify-end gap-3" >
+            <li class="text-base "><a href="index.html">Trajets</a></li>
+            <li class="text-base border-b-4 pb-2 border-yellow-500/80 rounded-md"><a href="cabine.html">Cabine</a></li>
+            <li class="text-base"><a href="tickets.html">Tickets</a><span class="cout-ticket w-5 h-2 rounded-lg  ml-2 bg-teal-300/40  p-2 text-sm ">0</span></li>
+            <li><i class="fa-solid fa-circle-user text-3xl" style="color: rgb(89, 198, 185);"></i></li>
+        </ul>
+     </nav>
+  </header>
+
+  <!-- Informations du trajet -->
+  <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/20  ">
+    <div class="trajet lg:m-2">
+        <h3 class="text-lg mb-2">trajet</h3>
+        <h1 class="text-lg font-bold lg:text-3xl" style="color: rgba(171, 148, 33, 0.735);">Safi → Marrakech</h1>
+    </div>
+    <div class="details-trajet text-sm lg:text-lg">
+      <p><i class="fa-solid fa-calendar-days mr-2" style="color: rgba(171, 148, 33, 0.735);"></i><span class="font-semibold">Date :</span> 30/10/2026</p>
+      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(171, 148, 33, 0.735)"></i><span class="font-semibold">Départ :</span> 08:00</p>
+      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(171, 148, 33, 0.735)"></i><span class="font-semibold">Bus :</span> B-1234</p>
+    </div>
+  </section>
+
+  <!-- Contenu principal -->
+ 
+    <section class="section-Infos flex flex-col  h-30 justify-between lg:flex-row mt-4 mx-4 lg:" >
+        <div class="shadow-sm p-3 flex justify-center items-center rounded-r-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">tatal Places :</p> <p class="text-gray-400 text-lg lg:text-2xl">20 </p> </div>
+        <div class="shadow-sm p-3  flex justify-center items-center rounded-2xl h-full flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">Nombre Sieges Disponible </p><p class="text-green-500 text-lg lg:text-2xl"><span  id="plcDispo">20</span>&nbsp;places</p></div>
+        <div class="shadow-sm p-3  flex justify-center items-center rounded-l-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">recette totale du trajet</p> <p class="text-blue-700 text-lg lg:text-2xl"><span  id="chiffreAffaire">0</span> DH</p></div>
+    </section>
+     <main class=" grid  grid-cols-1  lg:grid-cols-2 place-items-center lg:w-full ">
+    <!-- Plan des sièges -->
+    <section class="section-principal bg-gray-100/50 p-5 rounded-lg h-[90%] mt-15  w-[90%] place-items-center lg:w-[95%] lg:ml-8 lg:mt-2 md:h-[93%] md:mt-30">
+      <h2 class="ml-4  mb-3 text-center font-medium w-[96%] h-8 text-lg border-b">Plan de la cabine</h2>
+      <!-- Les 20 sièges -->
+       <div class="countainer-Box  grid grid-cols-2  lg:grid-cols-4 gap-3  w-[90%]  md:grid-cols-3">
+        <div class="box disponible" draggable="true">
+            <p class="nom"></p>
+            <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">1</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"> <img src="images/chair.svg" alt="chair" class="w-7">2</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">3</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">4</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">5</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">6</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">7</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">8</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">9</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">10</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">11</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">12</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">13</p>
+        </div>
+        <div class="box disponible" draggable="true">
+               <p class="nom"></p>
+               <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">14</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                <p class="nom"></p>
+                <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">15</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                 <p class="nom"></p>
+                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">16</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                 <p class="nom"></p>
+                 <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">17</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                  <p class="nom"></p>
+                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">18</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                  <p class="nom"></p>
+                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">19</p>
+        </div>
+        <div class="box disponible" draggable="true">
+                  <p class="nom"></p>
+                  <p class="siege"><img src="images/chair.svg" alt="chair" class="w-7">20</p>
+        </div>
+        
+     
+       </div>
+
+    </section>
+
+    <!-- Gestion des réservations -->
+    <aside class="p-2 rounded-lg h-[95%] w-[90%] mt-20 lg:mt-7 place-items-center ">
+      <section class="w-full overflow-hidden rounded-xl border-2 border-emerald-100 bg-white shadow-sm md:w-[80%] " >
+     <div class="flex  gap-3 border-b border-emerald-100 bg-emerald-50/70 p-3">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-xl text-white">
+        <i class="fa-solid fa-plus"></i>
+      </div>
+
+      <div>
+        <h2 class="font-bold text-emerald-800">Réserver une place</h2>
+        <p class="text-xs text-slate-500">Attribuez une place à un nouveau passager.</p>
+      </div>
+    </div>
+   
+     <!-- Formulaire réservation -->
+        
+         <form  class="Ajouter-form space-y-3 p-3">
+            <table class="space-y-1 w-full">
+                <tr>
+                    <td><label for="nom" class="text-xs font-semibold text-slate-700">Nom Passager<span class="text-red-500">*</span></label></td>
+                </tr>
+                <tr>
+                    <td class="text-center"><input type="text" name="nomComplet" id="nomComplet" placeholder="Ex:Mariem Bajbouji" class="nomPasseger w-[90%] rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none transition focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"></td>
+                </tr>
+                <tr>
+                    <td><label for="choix" class="text-xs font-semibold text-slate-700">   Sélectionner un siège <span class="font-normal text-slate-400">(optionnel)</label></td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <select name="seatNumber" id="choix"  class="Siege w-[90%] text-center rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-600 outline-none focus:border-emerald-500">
+                        <option value="chose">Choisir un siège</option>
+                        
+                      
+                    </select>
+                </class=>
+                </tr>
+             
+                <tr >
+                       <td class="text-center">
+                              <button class=" w-[90%] my-5  rounded-lg bg-emerald-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-600" onclick="Ajouter()" >  
+                               <i class="fa-solid fa-chair"></i>&nbsp; Reserver </button>
+                        </td>
+                </tr>
+                   <tr>
+                    <td class="w-full flex justify-center ">
+                        <p class="message   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden" ></p>
+                    </td>
+                </tr>
+                
+            </table>
+
+         </form>
+      </section>
+       <!-- section de modification  -->
+      <section class="w-full overflow-hidden rounded-xl border-2 border-blue-100 bg-white shadow-sm mt-3 md:w-[80%]">
+              <div class="flex gap-3 border-b border-blue-100  bg-blue-50/70 p-3">
+                      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-500 text-xl text-white">
+                      <i class="fa-solid fa-pen"></i>
+                </div>
+
+                    <div>
+                  <h2 class="font-bold text-blue-800">Modifier une réservation</h2>
+                  <p class="text-xs text-slate-500">Recherchez un passager pour modifier sa réservation.</p>
+                    </div>
+                </div>
+   
+      <!-- Formulaire modification -->
+         <form action="tickets.html"  class="EditForm space-y-3 p-3 ">
+            <table class="w-full">
+                <tr>
+                    <td><label for="PassChoix" class=" text-xs font-semibold text-slate-700 ">Sélectionner un Passager<span class="text-red-500">*</span></label></td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <select name="nomPasseger" id="NomModifier" class="w-[90%] text-center text-slate-600  rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500">
+                         <option value="chose">choiser un Passenger</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <td><label for="NouveauNom" class="text-xs font-semibold text-slate-700">Nouveau Nom <span class="font-normal text-slate-400">(Optionnel)</span></label></td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <input type="text" name="NouveauNom" id="NouveauNom" placeholder="Enter Un Nouveau" class="w-[90%] rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:border-blue-500">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="newSeat"  class="text-xs  font-semibold text-slate-700">Nouveau Siege  <span class="font-normal text-slate-400">(Optionnel)</span></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <select name="newSeat" id="newSeat" class="w-[90%] text-center text-slate-600   rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-blue-500">
+                         <option value="chose">choiser un autre Siege </option>
+                    </select>
+                </td>
+                </tr>
+             
+                <tr>
+                    <td class="text-center">
+                        <button class=" w-[90%] items-center justify-center gap-2 rounded-lg mt-4 bg-blue-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-600" type="submit">  
+                              <i class="fa-solid fa-pen"></i>&nbsp; Modifier </button>
+                        
+                     </td>
+                </tr>
+                  <tr>
+                    <td class="w-full flex justify-center ">
+                        <p class="messageModifier   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden  " ></p>
+                    </td>
+                </tr>
+            </table>
+
+         </form>
+      </section>
+       <!-- section de suppression -->
+      <section  class="w-full overflow-hidden rounded-xl border-2 border-red-100 bg-white shadow-sm mt-3 md:w-[80%]">
+        <div class="flex gap-3 border-b border-red-100 bg-red-50/70 p-3">
+      <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red-500 text-xl text-white">
+        <i class="fa-solid fa-trash"></i>
+      </div>
+
+      <div>
+        <h2 class="font-bold text-red-600">Supprimer une réservation</h2>
+        <p class="text-xs text-slate-500">Libérez une place en supprimant une réservation.</p>
+      </div>
+    </div>
+
+        <!-- Formulaire suppression -->
+          <form action="tickets.html"  class="SupprimerForm space-y-3 p-3">
+            <table class="w-full">
+             
+                <tr>
+                    <td><label for="choix" class="text-xs font-semibold text-slate-700"> Sélectionner un Passager <span class="text-red-600">*</span></label></td>
+                </tr>
+                <tr class="text-center">
+                    <td><select name="seatNumber" id="choix" class="RemoveNom w-[90%] text-center text-slate-600  rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm outline-none focus:border-red-500">
+                        <option value="chose">choisez un Passager </option>
+                       
+                    </select>
+                </td>
+                </tr>
+              
+                
+                <tr>
+                    <td class="text-center">  <button class=" w-[90%] items-center justify-center gap-2 rounded-lg mt-4 bg-red-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-red-600" onclick="Supprimer()">  
+                              <i class="fa-solid fa-trash"></i>&nbsp; Supprimer </button>
+                        </td>
+                </tr>
+                  <tr>
+                     <td class="w-full flex justify-center ">
+                        <p class="messageSupprimer   border-1 w-[90%] text-center p-1 rounded-xl mt-2  hidden" ></p>
+                    </td>
+                </tr>
+            </table>
+
+         </form>
+         
+      </section>
+    </aside>
+      
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-black text-center h-20 pt-4 mt-4" >
+    <p class="text-white ">© 2026 BusDirect - Gestion des réservations</p>
+  </footer>
+
+  <script src="script.js"> </script>
+
 </body>
 </html>
