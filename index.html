@@ -33,13 +33,35 @@
    
   </section>
   </head>
-      
+  <main>
+          <section class="section-Infos flex flex-col  h-60 md:h-30 justify-between md:flex-row mt-4 mx-4 lg:" >
+        <div class="shadow-md p-2 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/trajet.svg" alt="trajets" class="w-8"><p class="flex flex-col"><span>20 </span> <span class="text-gray-500">trajet</span></p></div>
+        <div class="shadow-md p-2 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/people.svg" alt="users" class="w-8"><p class="flex flex-col">400 </span><span class="text-gray-500">passager </span> </p></div>
+        <div class="shadow-md p-2 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/recette.svg" alt="recette" class="w-8"  ><p class="flex flex-col"><span>140 780 DH</span><span class="text-gray-500">recette totale</span></p></div>
+    </section>
+    <section class="panel  mb-4 mx-4 ">
+      <form class="form flex gap-10 p-5  rounded-lg border border-gray-300 bg-[#fff] " id="form">
+        <div class="flex flex-col w-[100%]"><label for="q">Ville</label><input id="q" placeholder="Ex: Marrakech" class="border border-[lightgrey] p-2 rounded-xl"></div>
+        <div class="flex flex-col w-[100%]"><label for="s">Statut</label><select id="s" class="border border-[lightgrey] p-2 rounded-xl"><option value="">Tous les statuts</option><option value="ok">Disponible</option><option value="full">Complet</option></select></div>
+        <button class="btn bg-[#00bf7a] w-[30%] h-10 mt-4 rounded-md text-white" type="submit">Rechercher</button>
+      </form>
+    </section>
+    
  
+       <div class="grid border h-[80%] place-items-center" id="grid">
+           <H1 class="font-bold">Grid des trajets</H1>
+        </div>
 
 
+       <nav class="pager flex w-full  p-3 justify-center gap-20" id="pager" aria-label="Pagination">
+        <div class="border p-4 rounded-md w-13 text-center h-13" disabled><i class="fa-solid fa-chevron-left"></i></div>
+        <div class="border p-4 rounded-md w-13 text-center h-13 bg-[#00bf7a] text-white" >1</div>
+        <div class="border p-4 rounded-md w-13 text-center h-13">2</div>
+        <div class="border p-4 rounded-md w-13 text-center h-13">3</div>
+        <div class="border p-4 rounded-md w-13 text-center h-13"><i class="fa-solid fa-chevron-right"></i></div>
+       </nav>
 
-
-
+       </main>
     
     <script type="module" src="js/main-trajets.js"></script>
 </body>
