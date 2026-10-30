@@ -8,7 +8,7 @@ export function renderTrajets(trips) {
         const dispo=placesLibres(trip)
         const complet=estComplet(trip)
         const {id,departure,destination,departureTime,arrivalTime,price,reservations,waitingList,capacity}=trip
-          return  `<div class="trajet-Crad  border border-gray-400 shadow-md p-4 rounded-md   flex flex-col gap-2 ">
+          return  `<div class="trajet-Crad  border border-gray-400 shadow-md p-3 rounded-md   flex flex-col gap-2 ">
                         <p>trajet#${trip.id}</p>
                         <h2 class="font-bold  text-2xl">${trip.departure}->${trip.destination} </h2>
                         <div class="flex justify-between items-center"> <p class="text-gray-400 text-md">${trip.departureTime}-${trip.arrivalTime}</p> <p class="font-bold text-xl">${trip.price}DH</p></div>

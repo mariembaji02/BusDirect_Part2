@@ -117,3 +117,7 @@
   font-family: 'Courier New', Courier, monospace;
   
 }
+
+.static{
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}

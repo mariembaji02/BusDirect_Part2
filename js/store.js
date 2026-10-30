@@ -15,11 +15,13 @@ export async function async(trajets) {
      {
         const result=await fetch("./data/trips.json")
         trajets=await result.json()
-        sauvegarder(trajets) 
+        return trajets
+      //   sauvegarder(trajets) 
      }
      catch
      {
         console.log("data not downloaded")
+        return []
      }
     }
 }
