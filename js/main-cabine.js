@@ -1,10 +1,3 @@
-import * as reservations from './reservations.js';
-import * as validators from "./validators.js"
-import * as render from './render.js'
-reservations.test();
-function afficherTout() {}
-
-
 //affichage des inforamtions d'un boxes
 const container = document.querySelector(".countainer-Box");
 const NexSiege = document.querySelector(".Siege");

@@ -11,7 +11,7 @@
       
       border-radius: 10px;
       padding: 10px;
-      height: 9rem;
+      height: 10rem;
       align-items: end;
       color: rgb(58, 64, 70);
       
@@ -23,6 +23,11 @@
 .countainer-Box>div.reserver
 {
   background-color: rgba(221, 56, 56, 0.918);
+}
+.vip.disponible
+{
+  /* bg-yellow-500  */
+  background-color:  #EAB308 !important;
 }
 .box p
 {
@@ -36,17 +41,17 @@
 }
 .box p.nom
 {
-  height: 60%;
+  height: 50%;
   background-color: rgba(225, 241, 239, 0.747);
   margin-bottom: 3px;
+  font-size: 20px;
 }
 .box p.siege
 {
   
   background-color: rgba(225, 241, 239, 0.747);
   display: flex;
-  justify-content: space-evenly;
-  
+  justify-content: space-evenly; 
   color: rgb(172, 146, 20);
   font-size: 20px;
 }
