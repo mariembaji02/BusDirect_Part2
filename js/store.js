@@ -1,13 +1,30 @@
 
+export let trajets=[]
+export async function async(trajets) {
 
-
-
-export function initialiser()
-{
-
+    trajets=JSON.parse(localStorage.getItem("trajets"))
+    if(trajets!== null)
+    {
+        return trajets
+    }
+    else
+    {
+        
+    
+     try
+     {
+        const result=await fetch("./data/trips.json")
+        trajets=await result.json()
+        sauvegarder(trajets) 
+     }
+     catch
+     {
+        console.log("data not downloaded")
+     }
+    }
 }
 
-export function  sauvegarder(trips) 
+export function  sauvegarder(trajets) 
 {
-
+   localStorage.setItem("trajets",JSON.stringify(trajets))
 }

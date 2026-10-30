@@ -1,7 +1,13 @@
 
 export const test = () => console.log("reservation OK");
 
-export function  placesLibres(trip){}
+export function  placesLibres(trip){
+    return trip.capacity-trip.reservations.length
+}
+export function estComplet(trip)
+{
+    return placesLibres(trip)===0
+}
 export function estVIP(siege) {}   
 
 export function prixSiege(prix, siege)  {}
