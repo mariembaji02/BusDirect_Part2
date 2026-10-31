@@ -35,15 +35,15 @@
   </head>
    <main class="w-full  flex flex-col gap-3 justify-center mt-5 flex-1">
           <section class="section-Infos flex flex-col  h-60 md:h-30 justify-between md:flex-row mt-4 mx-4 lg:" >
-        <div class="shadow-md p-2 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/trajet.svg" alt="trajets" class="w-8"><p class="flex flex-col"><span>20 </span> <span class="text-gray-500">trajet</span></p></div>
-        <div class=" shadow-md p-2 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/people.svg" alt="users" class="w-8"><p class="flex flex-col"><span class="totalPassager "> </span><span class="text-gray-500">passager </span> </p></div>
-        <div class="shadow-md p-2 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/recette.svg" alt="recette" class="w-8"  ><p class="flex flex-col"><span><span id="recette"></span> DH</span><span class="text-gray-500">recette totale</span></p></div>
+        <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl   h-20 md:w-[30%] " ><img src="images/trajet.svg" alt="trajets" class="w-8"><p class="flex flex-col"><span>20 </span> <span class="text-gray-500">trajet</span></p></div>
+        <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/people.svg" alt="users" class="w-8"><p class="flex flex-col"><span class="totalPassager "> </span><span class="text-gray-500">passager </span> </p></div>
+        <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/recette.svg" alt="recette" class="w-8"  ><p class="flex flex-col"><span><span id="recette"></span> DH</span><span class="text-gray-500">recette totale</span></p></div>
     </section>
     <section class="panel  mb-4 mx-4 ">
       <form class="form flex gap-10 p-5  rounded-lg border border-gray-300 bg-[#fff] " id="form">
-        <div class="flex flex-col w-[100%] relative"><label for="q">Ville</label><input id="q" placeholder="Ex: Marrakech" class="border border-[lightgrey] p-2 rounded-xl"> 
+        <div class="flex flex-col w-[100%] relative"><label for="q">Ville</label><input id="cherche" placeholder="Ex: Marrakech" class="border border-[lightgrey] p-4 rounded-xl"> 
         <i class="fa-solid fa-magnifying-glass"  style="color: rgba(154, 153, 149, 0.731);font-size: 25px;position: absolute;right:5%;top: 50%;"></i></div>
-        <div class="flex flex-col w-[70%]"><label for="s">Statut</label><select id="s" class="border border-[lightgrey] p-2 rounded-xl"><option value="">Tous les statuts</option><option value="ok">Disponible</option><option value="full">Complet</option></select></div>
+        <div class="flex flex-col w-[70%]"><label for="s">Statut</label><select id="filter" class="border border-[lightgrey] p-4 rounded-xl"><option value="allStatuts">Tous les statuts</option><option value="Disponible">Disponible</option><option value="Complet">Complet</option></select></div>
       </form>
     </section>
     
