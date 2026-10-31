@@ -13,24 +13,30 @@ function Recherche(trips)
 {
   let ville=document.getElementById("cherche").value.toLowerCase();
   let statut=document.getElementById("filter").value;
-  
+  let message=document.querySelector(".message");
+ 
+        
   let NewTable=trips.filter(trip=>{
        let search=trip.departure.toLowerCase().includes(ville)||trip.destination.toLowerCase().includes(ville);
-       if(!search)
-       {
-        console.log("aucun trajet trouver")
-        
-       }
+     
        let filter=true;
           if(statut==="Disponible"){ filter=!estComplet(trip)}
           if(statut==="Complet"){ filter=estComplet(trip)};
-       
-        
-      
+
        return search && filter
   })
-   
-     afficher(NewTable)
+    if(NewTable.length===0)
+    {
+        message.style.display="block"
+    }
+    else
+    {
+        message.style.display="none"
+    }
+    
+       afficher(NewTable)
+    
+    
 }
     let input = document.getElementById("cherche");
     let select = document.getElementById("filter");
