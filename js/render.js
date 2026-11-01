@@ -8,8 +8,8 @@ export function renderTrajets(trips) {
         const dispo=placesLibres(trip)
         const complet=estComplet(trip)
         const {id,departure,destination,departureTime,arrivalTime,price,reservations,waitingList,capacity}=trip
-          return  `<div class="trajet-Crad  border border-gray-400 shadow-md p-3 rounded-md   flex flex-col gap-2 ">
-                        <p>trajet#${trip.id}</p>
+          return  `<div data-id="${trip.id}" class="trajet-Crad cursor-pointer border border-gray-400 shadow-md p-3 rounded-md   flex flex-col gap-2 ">
+                        <p">trajet#${trip.id}</p>
                         <h2 class="font-bold  text-2xl">${trip.departure}->${trip.destination} </h2>
                         <div class="flex justify-between items-center"> <p class="text-gray-400 text-md">${trip.departureTime}-${trip.arrivalTime}</p> <p class="font-bold text-xl">${trip.price}DH</p></div>
                         <div class="flex justify-between items-center"> <p class="statut p-3 rounded-xl ${complet?"bg-red-200 text-red-700":"bg-green-200 text-green-700" }">${complet ? "Complet" :"Disponible"}</p> <p class="">${dispo} place disponible</p></div>
@@ -65,7 +65,7 @@ export function renderPagination(trips,page,total) {
    })
    paginationItem.addEventListener("click",(e)=>{
       let num= e.target.closest("[data-page]");
-        page=Number(num.textContent.trim());
+        page=Number(num.dataset.page);
         renderPagination(trips,page,total)
        
         // alert(num.textContent.trim())

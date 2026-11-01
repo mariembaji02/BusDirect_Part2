@@ -1,3 +1,10 @@
+import { async,trajets } from "./store.js";
+import {placesLibres} from "./reservations.js"
+const trips=await async(trajets);
+
+
+// console.log('trajet: '+trip.departure);
+
 //affichage des inforamtions d'un boxes
 const container = document.querySelector(".countainer-Box");
 const NexSiege = document.querySelector(".Siege");
@@ -15,6 +22,9 @@ const messageSupprimer=document.querySelector(".messageSupprimer");
 const RemoveForm=document.querySelector(".SupprimerForm");
 const remove_select = document.querySelector(".RemoveNom");
 const Reservations = [];
+//fonction d'affiche les details de trajet
+affichageTrajet()
+
 function saveArray()
 {
   localStorage.setItem("reservations",JSON.stringify(Reservations));
@@ -29,8 +39,7 @@ function affichageDetails()
 {
   let dispo=20-Reservations.length
   let tarif=80*Reservations.length
-  document.getElementById("chiffreAffaire").textContent=tarif;
-  document.getElementById("plcDispo").textContent=dispo;
+  // document.getElementById("chiffreAffaire").textContent=tarif;
 }
 
   getArray()  
@@ -49,10 +58,10 @@ form.addEventListener("submit", function (e) {
 function Ajouter() {
   let nomPasseger = form.querySelector(".nomPasseger").value.trim(); //input
   let siegeAjouter = form.querySelector(".Siege").value.trim(); //select
-  let placeDisponible = document.getElementById("plcDispo");
-  let chiffreAffaire = Number(
-    document.getElementById("chiffreAffaire").textContent,
-  );
+  // let placeDisponible = document.getElementById("plcDispo");
+  // let chiffreAffaire = Number(
+  //   document.getElementById("chiffreAffaire").textContent,
+  // );
 
  
 
@@ -132,13 +141,13 @@ function Ajouter() {
                   document.querySelector(".cout-ticket").textContent=Reservations.length
                   let placesReserver = Reservations.length;
                    places=20 - placesReserver;
-                  placeDisponible.innerHTML = places;
-                  chiffreAffaire += 80;
-                  document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
+                  // placeDisponible.innerHTML = places;
+                  // chiffreAffaire += 80;
+                  // document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
                   //save madification at local
                   localStorage.setItem("placesDisponibles",  places);
-                  localStorage.setItem("montantTotal", chiffreAffaire);
-                  document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
+                  // localStorage.setItem("montantTotal", chiffreAffaire);
+                  // document.getElementById("chiffreAffaire").innerHTML = chiffreAffaire;
                   siege.classList.remove("disponible");
                   siege.classList.add("reserver");
                   option.style.display = "none";
@@ -385,7 +394,7 @@ function Supprimer(){
        messageSupprimer.textContent="Le passager bien supprimer ";
        messageSupprimer.style.display="block";  //save madification at local
        localStorage.setItem("placesDisponibles",  places);
-       localStorage.setItem("montantTotal", chiffreAffaire);
+      //  localStorage.setItem("montantTotal", chiffreAffaire);
        
        messageDisplay(messageSupprimer)
         Remplir();
@@ -548,3 +557,37 @@ Boxes.forEach(box => {
 });
 
 
+function affichageTrajet()
+{
+  // console.table(trips)
+//lier les pages par id 
+
+const dataTrajet=new URLSearchParams(location.search);
+const id=Number(dataTrajet.get("id"))
+console.log('id trajet: '+id);
+const trip = trips.find(trip=>{
+  return trip.id===id
+})
+//ville
+let depart=document.getElementById("depart");
+depart.textContent=trip.departure;
+let destination=document.getElementById("destination");
+destination.textContent=trip.destination;
+//prix
+let prix=document.querySelector(".prix");
+prix.textContent=trip.price+ "DH" ;
+//horaire
+let time=document.querySelector(".horaire");
+time.textContent=trip.departureTime+ "→" +trip.arrivalTime;
+//placelibre
+  let dispo=document.querySelector(".plcDispo")
+  dispo.textContent=placesLibres(trip)+"/20 places"
+//recette
+  let recette = document.querySelector(".chiffreAffaire");
+
+    recette.textContent = trip.reservations.reduce((total, reservation) => {
+        return total + trip.price;
+    }, 0) + " DH";
+  // dispo.textContent=r(trip)+
+  console.table(trips)
+}

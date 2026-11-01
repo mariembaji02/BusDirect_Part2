@@ -9,18 +9,7 @@ let page=1
 function afficher(trips) {
   
     render.renderPagination(trips,page,total)
-    const totalPassager=trips.reduce((total,trip)=>{
-        return  total+trip.reservations.length;
-       },0)
-       let passagers=document.querySelector(".totalPassager")
-       passagers.textContent=totalPassager
-      // console.log("total:",totalPassager)
-
-       const recette=trips.reduce((total,trip)=>{
-        return  total+trip.reservations.length*trip.price;
-       },0)
-       let chiffreAffire=document.getElementById("recette")
-       chiffreAffire.textContent=recette
+    
 }   
 afficher(trips)
 
@@ -53,10 +42,42 @@ function Recherche(trips)
     
     
 }
+    //action de recherche et filtrer
     let input = document.getElementById("cherche");
     let select = document.getElementById("filter");
     input.addEventListener("input",()=>{Recherche(trips)})
     select.addEventListener("change",()=>{Recherche(trips)})
     
     
-    // select.addEventListener("change",Recherche())
+    // stastique des trajets
+       const totalPassager=trips.reduce((total,trip)=>{
+        return  total+trip.reservations.length;
+       },0)
+       let passagers=document.querySelector(".totalPassager")
+       passagers.textContent=totalPassager
+
+       const recette=trips.reduce((total,trip)=>{
+        return  total+trip.reservations.length*trip.price;
+       },0)
+       let chiffreAffire=document.getElementById("recette")
+       chiffreAffire.textContent=recette
+
+
+
+       //lier la page trajets avec la page cabine 
+
+       let gridTrajets=document.querySelector(".gridTrajets")
+
+       gridTrajets.addEventListener("click",(e)=>{
+       let trajetChoisi=e.target.closest("[data-id]")
+         if(trajetChoisi===null)
+            {
+            // alert("trajets introuvable")
+               e.preventDefault()
+               return
+            }
+            else
+            {
+               window.location.href=`cabine.html?id=${trajetChoisi.dataset.id}`
+            }
+       })

@@ -31,24 +31,30 @@
   </header>
 
   <!-- Informations du trajet -->
-  <section class="section-Head flex justify-between p-4  mx-4 bg-teal-200/20  ">
-    <div class="trajet lg:m-2">
-        <h3 class="text-lg mb-2">trajet</h3>
-        <h1 class="text-lg font-bold lg:text-3xl" style="color: rgba(171, 148, 33, 0.735);">Safi → Marrakech</h1>
+  <section class="section-Head p-4 flex mx-4 w-full bg-teal-200/20 justify-center ">
+    <div class="flex justify-around w-full">
+        <div class="trajet lg:m-2">
+        <h3 class="text-xl underline font-semibold mb-5 text-[rgba(201,172,28,0.74)] ">Trajet :</h3>
+        <h1 class="text-lg font-bold lg:text-3xl" ><span id="depart"></span>→ <span id="destination"></span></h1>
+       </div>
+      <div class="trajet lg:m-2 ">
+        <h3 class="text-xl underline font-semibold mb-5 text-[rgba(201,172,28,0.74)] "><i class="fa-solid fa-clock  mr-2" style="color: rgba(171, 148, 33, 0.735)"></i>Horaire :</h3>
+        <p class="horaire text-2xl text-center"> </p> 
+      </div>
+     <div class="trajet lg:m-2 w-[7%]">
+        <h3 class="text-xl underline font-semibold mb-5 text-[rgba(201,172,28,0.74)] flex gap-3 "><img src="images/price.svg" class="w-8" alt="prix"><span>Prix :</span></h3>
+      <p class="text-2xl text-center    prix"></p>    
     </div>
-    <div class="details-trajet text-sm lg:text-lg">
-      <p><i class="fa-solid fa-calendar-days mr-2" style="color: rgba(171, 148, 33, 0.735);"></i><span class="font-semibold">Date :</span> 30/10/2026</p>
-      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(171, 148, 33, 0.735)"></i><span class="font-semibold">Départ :</span> 08:00</p>
-      <p><i class="fa-solid fa-bus  mr-2" style="color: rgba(171, 148, 33, 0.735)"></i><span class="font-semibold">Bus :</span> B-1234</p>
     </div>
+    
   </section>
 
   <!-- Contenu principal -->
  
     <section class="section-Infos flex flex-col  h-30 justify-between lg:flex-row mt-4 mx-4 lg:" >
-        <div class="shadow-sm p-3 flex justify-center items-center rounded-r-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">tatal Places :</p> <p class="text-gray-400 text-lg lg:text-2xl">20 </p> </div>
-        <div class="shadow-sm p-3  flex justify-center items-center rounded-2xl h-full flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">Nombre Sieges Disponible </p><p class="text-green-500 text-lg lg:text-2xl"><span  id="plcDispo">20</span>&nbsp;places</p></div>
-        <div class="shadow-sm p-3  flex justify-center items-center rounded-l-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">recette totale du trajet</p> <p class="text-blue-700 text-lg lg:text-2xl"><span  id="chiffreAffaire">0</span> DH</p></div>
+        <div class="shadow-sm p-3 flex justify-center items-center rounded-r-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">tatal Places :</p> <p class="text-red-500 text-lg lg:text-2xl">20 places </p> </div>
+        <div class="shadow-sm p-3  flex justify-center items-center rounded-2xl h-full flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">Nombre Sieges Disponible </p><p class="plcDispo text-green-500 text-lg lg:text-2xl"></p></div>
+        <div class="shadow-sm p-3  flex justify-center items-center rounded-l-2xl flex-col lg:w-1/5"><p class="text-sm font-semibold lg:text-lg">recette totale du trajet</p> <p class="chiffreAffaire text-blue-700 text-lg lg:text-2xl"></p></div>
     </section>
      <main class=" grid  grid-cols-1  lg:grid-cols-2 place-items-center lg:w-full ">
     <!-- Plan des sièges -->
@@ -331,7 +337,7 @@
     <p class="text-white ">© 2026 BusDirect - Gestion des réservations</p>
   </footer>
 
-  <script src="js/main-cabine.js"> </script>
+  <script type="module" src="js/main-cabine.js"> </script>
 
 </body>
 </html>
