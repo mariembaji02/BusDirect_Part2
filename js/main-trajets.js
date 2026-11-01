@@ -3,10 +3,25 @@ import * as store from "./store.js"
 import {estComplet, test} from "./reservations.js"
 import * as render from "./render.js"
 const trips= await store.async(store.trajets)
+let total=6;
+let page=1  
 // console.table(trips)
 function afficher(trips) {
-    render.renderTrajets(trips)     
-} 
+  
+    render.renderPagination(trips,page,total)
+    const totalPassager=trips.reduce((total,trip)=>{
+        return  total+trip.reservations.length;
+       },0)
+       let passagers=document.querySelector(".totalPassager")
+       passagers.textContent=totalPassager
+      // console.log("total:",totalPassager)
+
+       const recette=trips.reduce((total,trip)=>{
+        return  total+trip.reservations.length*trip.price;
+       },0)
+       let chiffreAffire=document.getElementById("recette")
+       chiffreAffire.textContent=recette
+}   
 afficher(trips)
 
 function Recherche(trips)

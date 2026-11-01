@@ -37,7 +37,7 @@
           <section class="section-Infos flex flex-col  h-60 md:h-30 justify-between md:flex-row mt-4 mx-4 lg:" >
         <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl   h-20 md:w-[30%] " ><img src="images/trajet.svg" alt="trajets" class="w-8"><p class="flex flex-col"><span>20 </span> <span class="text-gray-500">trajet</span></p></div>
         <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/people.svg" alt="users" class="w-8"><p class="flex flex-col"><span class="totalPassager "> </span><span class="text-gray-500">passager </span> </p></div>
-        <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%] " ><img src="images/recette.svg" alt="recette" class="w-8"  ><p class="flex flex-col"><span><span id="recette"></span> DH</span><span class="text-gray-500">recette totale</span></p></div>
+        <div class="static  p-3 flex gap-10 justify-center items-center rounded-2xl  h-20 md:w-[30%]  " ><img src="images/recette.svg" alt="recette" class="w-8"  ><p class="flex flex-col"><span><span id="recette"></span> DH</span><span class="text-gray-500">recette totale</span></p></div>
     </section>
     <section class="panel  mb-4 mx-4 ">
       <form class="form flex gap-10 p-5  rounded-lg border border-gray-300 bg-[#fff] " id="form">
@@ -46,19 +46,17 @@
         <div class="flex flex-col w-[70%]"><label for="s">Statut</label><select id="filter" class="border border-[lightgrey] p-4 rounded-xl"><option value="allStatuts">Tous les statuts</option><option value="Disponible">Disponible</option><option value="Complet">Complet</option></select></div>
       </form>
     </section>
-    
        <span class="message w-full text-gray-800 hidden text-xl text-center">Aucun trajet ne correspond...</span>
+
       
        <div class="gridTrajets grid grid-cols-3 w-full gap-3 p-5 " id="grid">
       </div>
       
 
-       <nav class="pager flex w-full  p-3 justify-center gap-20" id="pager" aria-label="Pagination">
-        <div class="border p-4 rounded-md w-13 text-center h-13" disabled><i class="fa-solid fa-chevron-left"></i></div>
-        <div class="border p-4 rounded-md w-13 text-center h-13 bg-[#00bf7a] text-white" >1</div>
-        <div class="border p-4 rounded-md w-13 text-center h-13">2</div>
-        <div class="border p-4 rounded-md w-13 text-center h-13">3</div>
-        <div class="border p-4 rounded-md w-13 text-center h-13"><i class="fa-solid fa-chevron-right"></i></div>
+
+
+       <nav class="pagination flex w-full  p-3 justify-center gap-20" id="pager" aria-label="Pagination">
+        
        </nav>
 
        </main>
