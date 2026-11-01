@@ -42,18 +42,18 @@ export function renderPagination(trips,page,total) {
 
   let nombrePages=Math.ceil(trips.length/total)
   let arraynombre = Array.from({ length: nombrePages }, (_, i) => i + 1);
-  let paginationItem=document.querySelector(".pager")
+  let paginationItem=document.querySelector(".pagination")
   paginationItem.innerHTML=
   `
-          <button class="border p-4 rounded-md w-13 text-center h-13 disabled:opacity-40 disabled:cursor-not-allowed"  id="before" ${page===1?"disabled":""}>
+          <button class="border p-4 rounded-md w-13 text-center h-13 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"  id="before" ${page===1?"disabled":""}>
           <i class="fa-solid fa-chevron-left"></i>
           </button>
         ${ paginationItem.innerHTML=arraynombre.map((index)=>{
-          return `<button class="num border p-4 ${ page===index ?"bg-[rgb(13,194,167)] text-white" :""} rounded-md w-13 text-center h-13">
+          return `<button  data-page=${index} class="num border cursor-pointer p-4 ${ page===index ?"bg-[rgb(13,194,167)] text-white" :""} rounded-md w-13 text-center h-13">
                   ${index}
                   </button>`
         }).join("")}
-        <button class="border p-4 rounded-md w-13 text-center h-13 disabled:opacity-40 disabled:cursor-not-allowed" ${ page===nombrePages?"disabled":""}  id="after">
+        <button class="border p-4 rounded-md w-13 text-center h-13 cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed" ${ page===nombrePages?"disabled":""}  id="after">
         <i class="fa-solid fa-chevron-right"></i>
         </button>
    `
@@ -75,7 +75,7 @@ export function renderPagination(trips,page,total) {
         }
    })
    paginationItem.addEventListener("click",(e)=>{
-      let num= e.target.closest(".num");
+      let num= e.target.closest("[data-page]");
         page=Number(num.textContent.trim());
         renderPagination(trips,page,total)
        
