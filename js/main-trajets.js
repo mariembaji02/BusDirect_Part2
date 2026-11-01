@@ -3,10 +3,13 @@ import * as store from "./store.js"
 import {estComplet, test} from "./reservations.js"
 import * as render from "./render.js"
 const trips= await store.async(store.trajets)
+let total=6;
+let page=1  
 // console.table(trips)
 function afficher(trips) {
-    render.renderTrajets(trips)     
-} 
+  
+    render.renderPagination(trips,page,total)
+}   
 afficher(trips)
 
 function Recherche(trips)
